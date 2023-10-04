@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+//1) "  Çağatay Yıldız" isimli metindeki boşlukları kaldır.    (REPLACE)
+var method1="  Çağatay Yıldız";
+console.log("1.method",method1.trim());
+//2) "cagatay yildiz" kelimesindeki boşlukları temizle ve tüm harfleri büyült ( REPLACE ve UPPER)
+var method2="cagatay yildiz";
+console.log("2.metod",method1.trim().toUpperCase());
+//3) "******Çağatay Yıldız" isimli metindeki yıldızları kaldır (REPLACE)
+var method3="******Çağatay Yıldız";
+console.log("3.metod" , method3.replace(/\*/g," ").trim());
+//4) "Çağatay  Yıldız" metnindeki kelimeler arasında 2 boşluk var bunu bir boşluk yap (REPLACE)
+var method4="Çağatay   Yıldız"; 
+console.log("4.metod yanlış:" , method4);
+console.log("4.metod" , method4.replace(/\s+/g,' '));
+//5) "**Tech Career**" isimli metindeki yıldızları kaldır (REPLACE)
+var method5="**Tech Career**";
+console.log("5.metod" , method5.replace(/\*+/g,""));
+//6) "Tech Career" isimli metnin soluna ve sağına 3 yıldız koy. "***Tech Career***" ( Normal toplama operatörü)
+var method6="Tech Career";
+var star="***";
+console.log("6.metod" , star.concat(method6,star));
+console.log("6.metod" , "*".repeat(3)+method6+"*".repeat(3));
+console.log("6.metod" , "***"+method6+"***");
+//7) "Tech Career Bilişim teknolojileri" metnindeki son kelimeyi büyült (SUBSTRING)
+var method7="Tech Career Bilişim teknolojileri";
+console.log("7.metod" , method7.substring(20,33).toUpperCase());
+//8) "Tech bilişim" kelimelerin ilk harflerini büyült (Substring ve upper)
+var method8="Tech bilişim";
+console.log("8.metod" , method8.substring(0,1).toUpperCase()+method8.substring(1,4) , method8.substring(5,6).toUpperCase()+method8.substring(6,12));
+var metin = "tech bilişim teknolojileri";
+var kelimeler = metin.split(" "); // Dizeyi boşluklara göre böler
+for (var i = 0; i < kelimeler.length; i++) {
+    kelimeler[i] = kelimeler[i].charAt(0).toUpperCase() + kelimeler[i].slice(1);
+}
+var yeniMetin = kelimeler.join(" "); // Kelimeleri tekrar birleştirir
+console.log(yeniMetin);
+</script>   
+</body>
+</html>
